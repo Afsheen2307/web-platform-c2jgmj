@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="script.js"></script>
+    <!-- <link rel="stylesheet" type ="text/css" href="styles.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2? family=Lato:wght@400;700&display=swap" rel="stylesheet"
+    />
+    <style>
+    *{
+      font-family:'Lato',sans-serif;
+    }
+    .question{
+      padding:10px 20px;
+    }
+    .question label{
+      font-size:12px;
+      padding-bottom:20px;
+    }
+    .question input{
+      width:100%;
+      border:none;
+      padding-top:5px;
+      border-bottom:1px solid grey;
+    }
+    .question input:focus-visible{
+      outline:none;
+    }
+    .form-wrapper{
+      width:500px;
+      max-width:80vw;
+      margin:auto;
+      box-shadow:0px 0px 2px 8px black;
+      border-radius:8px;
+      padding:20px;
+      margin-top:50px;
+    }
+    .button-wrapper{
+      text-align:center;
+    }
+    .button-wrapper button{
+      width:120px;
+      padding:8px;
+      font-weight:600;
+      background:#0285fb;
+      border:none;
+      border-radius:21px;
+      color:white;
+    }
+    input[type='checkbox']{
+      width:unset;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="form-wrapper" class="form-wrapper">
+      <form action="" id="profileForm">
+        <div class="question question-1">
+          <label>Name</label>
+          <br />
+          <input placeholder="Enter Name" name="name" minlength="4"/>
+        </div>
+        <div class="question question-2">
+          <label>Mobile Number</label>
+          <input placeholder="Enter Number" name="mobile" maxlength="10" />
+        </div>
+        <div class="question question-3">
+          <label>Age</label>
+          <br />
+          <input placeholder="Enter Age" name='age'  maxlength="2" min="18" step="10" />
+        </div>
+        <div class="question question-4">
+          <label>Address</label>
+          <br />
+          <input placeholder="Enter Address" name="address" maxlength="200" minlength="2"/>
+        </div>
+        <!-- <div class="question question-5" style="display:flex">
+          <input name="terms" type="checkbox" />
+          <label>Lorem ipsum dolor sit,amet consectetur adipsicing elit. Eum,assumenda7</label>
+        </div>-->
+      </form>
+      <div class="button-wrapper">
+        <button onclick="saveData()">Save</button>
+      </div>
+    </div>
+    <script>
+      function saveData(){
+        let formData=new FormData(document.getElementaryById('profileForm'));
+        for (let key of formData.keys()){
+          console.log(formData.get(key));
+        }
+      }
+    </script>
+  </body>
+</html>
